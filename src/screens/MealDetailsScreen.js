@@ -8,29 +8,47 @@ import {
   ScrollView
 } from 'react-native'
 import React from 'react'
+
 import { FontAwesome } from '@expo/vector-icons'
 
-const RecipeDetailsScreen = ({ navigation, route }) => {
+const MealDetailsScreen = ({ navigation, route }) => {
   const { item } = route.params
 
-  console.log(item)
+  // console.log(item)
   return (
     <View style={{ backgroundColor: item.color, flex: 1 }}>
       <SafeAreaView
         style={{
           flexDirection: 'row',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-between',
           marginHorizontal: 16,
           marginVertical: 16
         }}
       >
-        <FontAwesome name={'heart-o'} size={28} color='white' />
+        <Pressable
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            padding: 8,
+            borderRadius: 8,
+            gap: 8
+          }}
+          onPress={() => {
+            navigation.navigate('Category List')
+          }}
+        >
+          <FontAwesome name={'arrow-left'} size={20} color='black' />
+          <Text>Back to Category List</Text>
+        </Pressable>
+        <FontAwesome name={'heart-o'} size={28} color='pink' />
       </SafeAreaView>
       <View
         style={{
           backgroundColor: '#fff',
           flex: 1,
-          marginTop: 140,
+          marginTop: 160,
           borderTopLeftRadius: 56,
           borderTopRightRadius: 56,
           alignItems: 'center',
@@ -42,7 +60,10 @@ const RecipeDetailsScreen = ({ navigation, route }) => {
             height: 300,
             width: 300,
             position: 'absolute',
-            top: -150
+            top: -150,
+            border: '1px solid red',
+            borderRadius: 150,
+            overflow: 'hidden'
           }}
         >
           <Image
@@ -50,7 +71,8 @@ const RecipeDetailsScreen = ({ navigation, route }) => {
             style={{
               width: '100%',
               height: '100%',
-              resizeMode: 'contain'
+              resizeMode: 'cover',
+              objectFit: 'cover'
             }}
           />
         </View>
@@ -179,6 +201,6 @@ const RecipeDetailsScreen = ({ navigation, route }) => {
   )
 }
 
-export default RecipeDetailsScreen
+export default MealDetailsScreen
 
 const styles = StyleSheet.create({})

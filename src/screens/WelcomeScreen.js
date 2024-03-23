@@ -8,7 +8,7 @@ import {
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 
-const WelcomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
       <StatusBar />
@@ -34,7 +34,7 @@ const WelcomeScreen = ({ navigation }) => {
       </Text>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('RecipeList')}
+        onPress={() => navigation.navigate('Category List')}
         style={{
           backgroundColor: '#f96163',
           borderRadius: 18,
@@ -51,6 +51,6 @@ const WelcomeScreen = ({ navigation }) => {
   )
 }
 
-export default WelcomeScreen
+export default HomeScreen
 
 const styles = StyleSheet.create({})
