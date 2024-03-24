@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "reci-pie",
-    "slug": "reci-pie",
+    "name": "MealApp",
+    "slug": "MealApp",
     "version": "1.0.0",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",

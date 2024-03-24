@@ -33,7 +33,7 @@ const AppNavigator = () => {
           }}
         />
         <Drawer.Screen
-          name='Pick Your Meals'
+          name='Categories'
           component={MealStack}
           options={{
             drawerActiveTintColor: '#FE724C',

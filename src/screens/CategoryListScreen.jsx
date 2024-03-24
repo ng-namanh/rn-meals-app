@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
-import CategoriesFilter from '../components/CategoriesFilter'
+import CategoriesFilter from '../components/CategoriesList'
 
 const CategoryListScreen = () => {
   return (

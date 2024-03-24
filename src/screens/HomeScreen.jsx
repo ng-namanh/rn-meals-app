@@ -47,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <Pressable
-        onPress={() => navigation.navigate('Pick Your Meals')}
+        onPress={() => navigation.navigate('Categories')}
         style={{
           backgroundColor: '#FE724C',
           alignSelf: 'flex-end',
