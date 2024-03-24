@@ -1,13 +1,14 @@
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, SafeAreaView, View } from 'react-native'
 import React from 'react'
 import MealsList from '../components/MealList'
-import { categories, recipeList } from '../Constant'
+import { meals } from '../data/meals'
+import { categories } from '../data/categories'
 import { useLayoutEffect } from 'react'
 
 const MealListScreen = ({ route, navigation }) => {
   const categoryName = route.params?.categoryName ?? 'Default Title'
   const catId = route.params.categoryId
-  const displayedMeals = recipeList.filter((mealItem) => {
+  const displayedMeals = meals.filter((mealItem) => {
     return mealItem.categoryIds.indexOf(catId) >= 0
   })
 
@@ -23,7 +24,13 @@ const MealListScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, marginHorizontal: 16, marginVertical: 16 }}>
-      <Text>{categoryName}</Text>
+      <Text style={{ fontSize: 20 }}>
+        Category:
+        <Text style={{ fontWeight: 'bold', color: '#f96163' }}>
+          {' '}
+          {categoryName}
+        </Text>
+      </Text>
       <MealsList displayedMeals={displayedMeals} />
     </SafeAreaView>
   )

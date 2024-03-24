@@ -1,95 +1,41 @@
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  Pressable,
-  ScrollView
-} from 'react-native'
-import React from 'react'
+import { Image, Text, View, ScrollView } from 'react-native'
 
-import { FontAwesome } from '@expo/vector-icons'
-
-const MealDetailsScreen = ({ navigation, route }) => {
-  const { item } = route.params
-
-  // console.log(item)
+function MealDetailsContent({ item }) {
   return (
-    <View style={{ backgroundColor: item.color, flex: 1 }}>
-      <SafeAreaView
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginHorizontal: 16,
-          marginVertical: 16
-        }}
-      >
-        <Pressable
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            backgroundColor: 'rgba(255, 255, 255, 0.6)',
-            padding: 8,
-            borderRadius: 8,
-            gap: 8
-          }}
-          onPress={() => {
-            navigation.navigate('Category List')
-          }}
-        >
-          <FontAwesome name={'arrow-left'} size={20} color='black' />
-          <Text>Back to Category List</Text>
-        </Pressable>
-        <FontAwesome name={'heart-o'} size={28} color='pink' />
-      </SafeAreaView>
+    <>
       <View
         style={{
-          backgroundColor: '#fff',
-          flex: 1,
-          marginTop: 160,
-          borderTopLeftRadius: 56,
-          borderTopRightRadius: 56,
-          alignItems: 'center',
-          paddingHorizontal: 16
+          height: 300,
+          width: 300,
+          position: 'absolute',
+          top: -150,
+          borderBlockColor: item.color,
+          borderWidth: 2,
+          borderRadius: 150,
+          overflow: 'hidden'
         }}
       >
-        <View
+        <Image
+          source={item.image}
           style={{
-            height: 300,
-            width: 300,
-            position: 'absolute',
-            top: -150,
-            border: '1px solid red',
-            borderRadius: 150,
-            overflow: 'hidden'
+            width: '100%',
+            height: '100%',
+            resizeMode: 'center',
+            objectFit: 'cover'
           }}
-        >
-          <Image
-            source={item.image}
-            style={{
-              width: '100%',
-              height: '100%',
-              resizeMode: 'cover',
-              objectFit: 'cover'
-            }}
-          />
-        </View>
+        />
+      </View>
 
-        {/* Recipe Name */}
+      <View>
         <Text style={{ marginTop: 150, fontSize: 28, fontWeight: 'bold' }}>
           {item.name}
         </Text>
 
         <View style={{ flex: 1 }}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            {/* Recipe Description */}
             <Text style={{ fontSize: 20, marginVertical: 16 }}>
               {item.description}
             </Text>
-
-            {/* Recipe Extra Details */}
 
             <View
               style={{
@@ -140,9 +86,6 @@ const MealDetailsScreen = ({ navigation, route }) => {
                 </Text>
               </View>
             </View>
-
-            {/* Recipe Ingredients  */}
-
             <View style={{ alignSelf: 'flex-start', marginVertical: 22 }}>
               <Text
                 style={{ fontSize: 22, fontWeight: '600', marginBottom: 6 }}
@@ -176,8 +119,6 @@ const MealDetailsScreen = ({ navigation, route }) => {
               })}
             </View>
 
-            {/* Recipe Steps */}
-
             <View style={{ alignSelf: 'flex-start', marginVertical: 22 }}>
               <Text
                 style={{ fontSize: 22, fontWeight: '600', marginBottom: 6 }}
@@ -197,10 +138,7 @@ const MealDetailsScreen = ({ navigation, route }) => {
           </ScrollView>
         </View>
       </View>
-    </View>
+    </>
   )
 }
-
-export default MealDetailsScreen
-
-const styles = StyleSheet.create({})
+export default MealDetailsContent

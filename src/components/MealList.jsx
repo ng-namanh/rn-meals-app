@@ -1,28 +1,35 @@
+import React from 'react'
 import {
   FlatList,
   StyleSheet,
   Text,
   View,
   Image,
-  Pressable
+  Pressable,
+  useWindowDimensions
 } from 'react-native'
-import React from 'react'
-import { colors, recipeList } from '../Constant'
+import { colors } from '../constants/color'
 import { FontAwesome } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import useFavoristList from '../store/favorite'
 
 const MealsList = ({ displayedMeals }) => {
   const navigation = useNavigation()
+  const favoriteList = useFavoristList((state) => state.favoriteMeals)
+  const windowWidth = useWindowDimensions().width
 
-  const filteredRecipeByCategoryIds = recipeList.filter((recipe) =>
-    recipe.categoryIds.includes('4')
-  )
+  function checkIfFavorited(id) {
+    return favoriteList.some((meal) => meal.id === id)
+  }
 
-  console.log('filteredRecipeByCategoryIds', displayedMeals)
+  const numColumns = windowWidth > 600 ? 3 : 2
+
+  const flatListKey = `flatlist-${numColumns}`
 
   return (
-    <View>
+    <View style={{ marginTop: 20, marginBottom: 20 }}>
       <FlatList
+        key={flatListKey}
         data={displayedMeals}
         renderItem={({ item }) => (
           <Pressable
@@ -42,12 +49,33 @@ const MealsList = ({ displayedMeals }) => {
               marginVertical: 16,
               alignItems: 'center',
               paddingHorizontal: 8,
-              paddingVertical: 26
+              paddingVertical: 26,
+              width: windowWidth / numColumns - 20
             }}
           >
+            {checkIfFavorited(item.id) && (
+              <View
+                style={{
+                  position: 'absolute',
+                  alignSelf: 'flex-end',
+                  top: 10,
+                  right: 10
+                }}
+              >
+                <FontAwesome name={'heart'} size={20} color='red' />
+              </View>
+            )}
+
             <Image
               source={item.image}
-              style={{ width: 150, height: 150, resizeMode: 'center' }}
+              style={{
+                width: '100%',
+                height: 150,
+                marginTop: 10,
+                marginBottom: 10,
+                resizeMode: 'center',
+                borderRadius: 12
+              }}
             />
 
             <Text>{item.name}</Text>
@@ -65,7 +93,7 @@ const MealsList = ({ displayedMeals }) => {
             </View>
           </Pressable>
         )}
-        numColumns={2}
+        numColumns={numColumns}
         columnWrapperStyle={{
           justifyContent: 'space-between'
         }}

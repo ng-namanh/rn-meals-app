@@ -1,80 +1,8 @@
-export const colors = {
-  COLOR_PRIMARY: '#f96163',
-  COLOR_LIGHT: '#fff',
-  COLOR_DARK: '#000',
-  COLOR_DARK_ALT: '#262626'
-}
-
-//  Data for categories filter
-
-export const categories = [
-  {
-    id: '0',
-    category: 'Breakfast'
-  },
-  {
-    id: '1',
-    category: 'Lunch'
-  },
-  {
-    id: '2',
-    category: 'Dinner'
-  },
-  {
-    id: '3',
-    category: 'Asian'
-  },
-  {
-    id: '4',
-    category: 'Italian'
-  },
-  {
-    id: '5',
-    category: 'Desserts'
-  },
-  {
-    id: '6',
-    category: 'Vegetarian'
-  },
-  {
-    id: '7',
-    category: 'Seafood'
-  },
-  {
-    id: '8',
-    category: 'Drinks'
-  },
-  {
-    id: '9',
-    category: 'Soups'
-  },
-  {
-    id: '10',
-    category: 'Salads'
-  },
-  {
-    id: '11',
-    category: 'Snacks'
-  },
-  {
-    id: '12',
-    category: 'Vegan'
-  },
-  {
-    id: '13',
-    category: 'Gluten-Free'
-  },
-  {
-    id: '14',
-    category: 'Quick & Easy'
-  }
-]
-
-export const recipeList = [
+export const meals = [
   {
     id: '01',
     name: 'Tuna Tartare',
-    image: require('./assets/images/tuna.png'),
+    image: require('../assets/images/tuna.png'),
     rating: '4.2',
     ingredients: ['Fresh Tuna', 'Lime Juice', 'Red Onion', 'Avocado'],
     time: '40 mins',
@@ -90,12 +18,12 @@ export const recipeList = [
       'Drizzle lime juice over the mixture and gently toss.',
       'Serve chilled and enjoy!'
     ],
-    categoryIds: ['0', '1', '2', '7']
+    categoryIds: ['0', '1', '2', '7', '10']
   },
   {
     id: '02',
     name: 'Lasagna',
-    image: require('./assets/images/lasgana.png'),
+    image: require('../assets/images/lasgana.png'),
     rating: '3.6',
     ingredients: [
       'Lasagna Noodles',
@@ -116,12 +44,12 @@ export const recipeList = [
       'Repeat the layers and bake in the oven until bubbly and golden.',
       'Let it cool slightly before serving.'
     ],
-    categoryIds: ['2', '4']
+    categoryIds: ['2', '4', '1', '0', '13']
   },
   {
     id: '03',
     name: 'Hot Dog',
-    image: require('./assets/images/hotdog.png'),
+    image: require('../assets/images/hotdog.png'),
     rating: '4.6',
     ingredients: ['Hot Dog Buns', 'Frankfurters', 'Ketchup', 'Mustard'],
     time: '40 mins',
@@ -137,12 +65,12 @@ export const recipeList = [
       'Squeeze ketchup and mustard over the frankfurters.',
       'Serve with your favorite sides and enjoy!'
     ],
-    categoryIds: ['1', '5']
+    categoryIds: ['1', '5', '4', '7', '0']
   },
   {
     id: '04',
     name: 'Manchurian',
-    image: require('./assets/images/manchurian.png'),
+    image: require('../assets/images/manchurian.png'),
     rating: '3.6',
     ingredients: ['Cauliflower', 'Soy Sauce', 'Ginger', 'Garlic'],
     time: '30 mins',
@@ -163,7 +91,7 @@ export const recipeList = [
   {
     id: '05',
     name: 'Chicken',
-    image: require('./assets/images/chicken.png'),
+    image: require('../assets/images/chicken.png'),
     rating: '2.2',
     ingredients: ['Chicken Breasts', 'Salt', 'Black Pepper', 'Olive Oil'],
     time: '45 mins',
@@ -180,12 +108,12 @@ export const recipeList = [
       'Transfer the chicken to the oven and bake until cooked through.',
       'Serve hot and enjoy your flavorful chicken!'
     ],
-    categoryIds: ['1', '2', '3', '6']
+    categoryIds: ['1', '9', '12', '6', '7']
   },
   {
     id: '06',
     name: 'Cupcakes',
-    image: require('./assets/images/cupcakes.png'),
+    image: require('../assets/images/cupcakes.png'),
     rating: '5.0',
     ingredients: ['Flour', 'Sugar', 'Eggs', 'Butter'],
     time: '60 mins',
@@ -201,12 +129,12 @@ export const recipeList = [
       'Let the cupcakes cool, then frost and decorate as desired.',
       'Indulge in these sweet treats and savor the flavor!'
     ],
-    categoryIds: ['5']
+    categoryIds: ['5', '0', '11', '14', '8']
   },
   {
     id: '07',
     name: 'Curry',
-    image: require('./assets/images/curry.png'),
+    image: require('../assets/images/curry.png'),
     rating: '4.8',
     ingredients: ['Meat', 'Curry Powder', 'Coconut Milk', 'Spices'],
     time: '55 mins',
@@ -224,12 +152,12 @@ export const recipeList = [
       'Cover and let the curry simmer until the meat is tender and the flavors meld.',
       'Serve the curry with rice or bread and enjoy the deliciousness!'
     ],
-    categoryIds: ['1', '2', '3', '6']
+    categoryIds: ['2', '12', '13', '7', '3']
   },
   {
     id: '08',
     name: 'Ramen',
-    image: require('./assets/images/ramen-org.png'),
+    image: require('../assets/images/ramen-org.png'),
     rating: '4.2',
     ingredients: ['Ramen Noodles', 'Soy Sauce', 'Eggs', 'Vegetables'],
     time: '35 mins',
@@ -246,12 +174,12 @@ export const recipeList = [
       'Assemble the ramen bowls by placing cooked noodles, vegetables, and egg slices.',
       'Ladle the hot broth over the ingredients and get ready to enjoy your homemade ramen!'
     ],
-    categoryIds: ['1', '2', '3', '6']
+    categoryIds: ['11', '12', '3', '9', '0']
   },
   {
     id: '09',
     name: 'Smoothie',
-    image: require('./assets/images/smoothie.png'),
+    image: require('../assets/images/smoothie.png'),
     rating: '4.8',
     ingredients: ['Fruits', 'Yogurt', 'Milk', 'Honey'],
     time: '15 mins',
@@ -271,7 +199,7 @@ export const recipeList = [
   {
     id: '10',
     name: 'Tomato Soup',
-    image: require('./assets/images/tomato-soup.png'),
+    image: require('../assets/images/tomato-soup.png'),
     rating: '4.1',
     ingredients: ['Tomatoes', 'Vegetable Broth', 'Onions', 'Garlic'],
     time: '30 mins',
@@ -293,7 +221,7 @@ export const recipeList = [
   {
     id: '11',
     name: 'Caesar Salad',
-    image: require('./assets/images/caesar-salad.png'),
+    image: require('../assets/images/caesar-salad.png'),
     rating: '4.5',
     ingredients: [
       'Romaine Lettuce',
@@ -315,12 +243,12 @@ export const recipeList = [
       'Top with Parmesan cheese and croutons.',
       'Serve immediately and enjoy the freshness!'
     ],
-    categoryIds: ['1', '2', '10', '11', '14']
+    categoryIds: ['2', '6', '3', '1', '10']
   },
   {
     id: '12',
     name: 'Stir-Fry',
-    image: require('./assets/images/stir-fry.png'),
+    image: require('../assets/images/stir-fry.png'),
     rating: '4.7',
     ingredients: ['Chicken/Tofu', 'Vegetables', 'Stir-Fry Sauce', 'Rice'],
     time: '20 mins',
@@ -338,12 +266,12 @@ export const recipeList = [
       'Pour in stir-fry sauce and coat the ingredients evenly.',
       'Serve the stir-fry over cooked rice and enjoy a delicious and healthy meal!'
     ],
-    categoryIds: ['1', '2', '3', '6', '8', '14']
+    categoryIds: ['3', '2', '5', '9', '10', '4']
   },
   {
     id: '13',
     name: 'Pancakes',
-    image: require('./assets/images/pancakes.png'),
+    image: require('../assets/images/pancakes.png'),
     rating: '4.3',
     ingredients: ['Flour', 'Milk', 'Eggs', 'Sugar', 'Butter'],
     time: '20 mins',
@@ -361,12 +289,12 @@ export const recipeList = [
       'Flip the pancakes and cook for another minute or two until golden brown.',
       'Serve hot with your favorite toppings like maple syrup, fresh fruits, or whipped cream.'
     ],
-    categoryIds: ['1', '5', '11', '14']
+    categoryIds: ['1', '5', '11', '14', '0']
   },
   {
     id: '14',
     name: 'Chicken Breasts',
-    image: require('./assets/images/chicken-roasted-vegetables.png'),
+    image: require('../assets/images/chicken-roasted-vegetables.png'),
     rating: '4.9',
     ingredients: [
       'Chicken Breasts',
@@ -389,12 +317,12 @@ export const recipeList = [
       'Roast in the oven until the chicken is cooked through and the vegetables are tender-crisp.',
       'Enjoy a complete and nutritious meal!'
     ],
-    categoryIds: ['1', '2', '6', '14']
+    categoryIds: ['1', '2', '6', '14', '0']
   },
   {
     id: '15',
     name: 'Fruit Salad',
-    image: require('./assets/images/fruit-salad.png'),
+    image: require('../assets/images/fruit-salad.png'),
     rating: '4.2',
     ingredients: ['Seasonal Fruits', 'Honey', 'Lemon Juice', 'Mint Leaves'],
     time: '15 mins',
@@ -415,7 +343,7 @@ export const recipeList = [
   {
     id: '16',
     name: 'Chicken Quesadillas',
-    image: require('./assets/images/chicken-quesadillas.png'),
+    image: require('../assets/images/chicken-quesadillas.png'),
     rating: '4.4',
     ingredients: ['Tortillas', 'Chicken Breast', 'Cheese', 'Salsa'],
     time: '15 mins',
@@ -435,12 +363,12 @@ export const recipeList = [
       'Cook for a few minutes per side until golden brown and cheese is melted.',
       'Cut into wedges and serve with your favorite salsa or toppings.'
     ],
-    categoryIds: ['1', '2', '11', '14']
+    categoryIds: ['8', '3', '7', '11', '0']
   },
   {
     id: '17',
     name: 'Black Bean Burgers',
-    image: require('./assets/images/black-bean-burgers.png'),
+    image: require('../assets/images/black-bean-burgers.png'),
     rating: '4.7',
     ingredients: ['Black Beans', 'Breadcrumbs', 'Egg', 'Spices'],
     time: '30 mins',
@@ -457,12 +385,12 @@ export const recipeList = [
       'Cook the black bean burgers for a few minutes per side until golden brown and cooked through.',
       'Serve on hamburger buns with your favorite toppings.'
     ],
-    categoryIds: ['1', '2', '6', '12', '14']
+    categoryIds: ['8', '12', '2', '10', '11']
   },
   {
     id: '18',
     name: 'Baked Salmon',
-    image: require('./assets/images/baked-salmon.png'),
+    image: require('../assets/images/baked-salmon.png'),
     rating: '4.8',
     ingredients: ['Salmon Fillet', 'Lemon', 'Fresh Herbs', 'Olive Oil'],
     time: '25 mins',
